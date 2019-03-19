@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TaskBar from './TaskBar'
 import ToDoList from './ToDoList'
+import SingleItem from './SingleItem'
 
 class App extends Component {
   constructor(props) {
@@ -19,18 +20,18 @@ class App extends Component {
 
   addElement(event) {
     event.preventDefault();
-    console.log('eccolo');
+    console.log('click eccolo');
     const array = this.state.items;
     array.push(this.state.value);
     this.setState({items: array});
-    console.log(array);
+    console.log('addElement',array);
   }
 
   render() {
     return (
       <div className="App">
         <TaskBar addElement={this.addElement} setInput={this.setInput} value={this.state.value}/>
-        <ToDoList array={this.items}/>
+        <ToDoList items={this.state.items}/>
       </div>
     );
   }
