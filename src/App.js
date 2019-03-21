@@ -35,7 +35,6 @@ class App extends Component {
   }
 
   deleteItem(key) {
-    console.log('deletethisss!!!!!',key);
     const filteredItems = this.state.items.filter(item => {
       return item[1] !== key
     });

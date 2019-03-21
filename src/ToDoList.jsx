@@ -5,7 +5,6 @@ class ToDoList extends Component {
   render() {
     const todoitems = this.props.items;
     const listItems = todoitems.map(item => {
-      console.log('constructor',item[1])
       return (
         <SingleItem
           item={item[0]}
